@@ -9,7 +9,7 @@ const authRoutes = require("./routes/Auth");
 const jwt = require("jsonwebtoken");
 // const path = require("path")
 require("dotenv").config();
-
+const port = process.env.PORT || 4000;
 const app = express();
 // Middlewares
 
@@ -56,6 +56,6 @@ conectDb().catch((error) => console.log(error));
 // }
 
 // Server Listening
-app.listen(process.env.PORT, () => {
+app.listen(port, () => {
   console.log(`Server Listening at PORT ${process.env.PORT}`);
 });
